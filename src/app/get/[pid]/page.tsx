@@ -1,4 +1,4 @@
-import CodeSpace from "~/app/_component/CodeSpace";
+import CodeSpace from "../../_component/CodeSpace";
 import Link from "next/link";
 import { db } from "~/server/db";
 
