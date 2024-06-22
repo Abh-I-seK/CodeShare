@@ -1,5 +1,5 @@
-import CodeSpace from "../../_component/CodeSpace";
 import Link from "next/link";
+import CodeSpace from "~/app/_component/CodeSpace";
 import { db } from "~/server/db";
 
 type Params = {
