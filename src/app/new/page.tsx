@@ -9,6 +9,7 @@ import { Button } from "~/components/ui/button";
 import { materialLight } from "@uiw/codemirror-theme-material";
 import { Alert, AlertDescription, AlertTitle  } from "~/components/ui/alert";
 import { Terminal, X } from "lucide-react";
+import { useFormStatus } from "react-dom";
 
 export default function Write(){
     const [code, setCode] = useState<string>("");
@@ -45,7 +46,7 @@ export default function Write(){
                 }
             }}>
             <div className="text-center mb-5">
-                <Button type="submit">Submit</Button>
+                <SubmitButton />
             </div>
             </form>
             <CodeMirror height="500px" onChange={onChange} theme={materialLight}></CodeMirror>
@@ -54,3 +55,7 @@ export default function Write(){
     )
 }
 
+function SubmitButton(){
+    const{pending} = useFormStatus();
+    return(<Button type="submit">{ pending ? "Submitting..." : "Submit"}</Button>)
+}
