@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { db } from "~/server/db";
 import CodeSpace from "~/_component/CodeSpace";
-type Params = Promise<{pid:string}>;
+type Params = Promise<{ pid: string }>;
 
 export default async function Render({ params }: { params: Params }) {
-    const pid = await params;
-    const nos = parseInt(pid + ""); 
+  const param = await params;
+  const nos = parseInt(param.pid + "");
   const c = await db.codes.findUnique({
     where: {
       id: nos,
@@ -20,7 +20,7 @@ export default async function Render({ params }: { params: Params }) {
         </Link>
       </nav>
       <div className="align-left m-3">
-        <CodeSpace props={{code:resp}}></CodeSpace>
+        <CodeSpace props={{ code: resp }}></CodeSpace>
       </div>
     </div>
   );
