@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GeistSans } from "geist/font/sans";
+import { Toaster } from "~/components/ui/toaster";
 
 export const metadata = {
   title: "CodeShare",
@@ -16,8 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        {children}
-        <SpeedInsights/>  
+        <main>{children}</main>
+        <Toaster/>
       </body>
     </html>
   );
