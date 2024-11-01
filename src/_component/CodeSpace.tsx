@@ -6,7 +6,7 @@ import { Copy } from 'lucide-react';
 import { materialDark } from '@uiw/codemirror-theme-material';
 import { useToast } from '~/hooks/use-toast';
 
-export default function CodeSpace(props : {code : string}){
+export default function CodeSpace({props} : {props : {code : string}}){
     const [code , setCode] = useState<string>(props.code);
     const { toast } = useToast();
 
