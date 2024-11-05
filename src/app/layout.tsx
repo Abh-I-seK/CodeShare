@@ -5,7 +5,7 @@ import { Toaster } from "~/components/ui/toaster";
 export const metadata = {
   title: "CodeShare",
   description: "CodeShare is a platform for sharing code snippets and repositories.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "./icon.svg" }], 
 };
 
 export default function RootLayout({
